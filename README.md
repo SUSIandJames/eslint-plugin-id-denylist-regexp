@@ -41,4 +41,4 @@ export default [
 ];
 ```
 
-**Note:** Since ESLint's options need to serializable you have to indicate regular expressions by s  
+**Note:** Since ESLint's options need to serializable you have to indicate regular expressions by a leading slash.
