@@ -1,6 +1,6 @@
 # eslint-plugin-id-denylist-regexp
 
-Drop-in replacement for ESLint's rule id-denylist with support for regular expressions.
+Drop-in replacement for [ESLint's rule `id-denylist`](https://eslint.org/docs/latest/rules/id-denylist) with support for regular expressions.
 
 ## Installation
 
