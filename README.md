@@ -41,4 +41,4 @@ export default [
 ];
 ```
 
-**Note:** Since ESLint's options need to serializable you have to indicate regular expressions by a leading slash.
+**Note:** Since ESLint's options need to be serializable you have to specify regular expressions as strings with a leading slash instead of using JavaScript's `RegExp()` constructor.
