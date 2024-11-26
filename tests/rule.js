@@ -8,6 +8,10 @@ const ruleTester = new RuleTester();
 ruleTester.run("id-denylist", rule, {
     valid: [
         {
+            code: "foo = \"bar\"",
+            options: ["/Foo/", "/fo$/", "/bar/"]
+        },
+        {
             code: "const tmp0 = 1",
             options: ["/_[0-9]/"]
         },
@@ -23,19 +27,42 @@ ruleTester.run("id-denylist", rule, {
 
     invalid: [
         {
-            code: "const tmp_0 = 1",
-            options: ["/_[0-9]/"],
-            errors: [{ message: "Identifier 'tmp_0' is restricted." }]
+            code: "foo = \"bar\"",
+            options: ["/foo/"],
+            errors: [
+                {
+                    messageId: "restricted",
+                    data: { name: "foo" },
+                    type: "Identifier"
+                }
+            ]
         },
         {
-            code: "const tmp = 1",
-            options: ["/T/i"],
-            errors: [{ message: "Identifier 'tmp' is restricted." }]
+            code: "foo = \"bar\"",
+            options: ["/Foo/i"],
+            errors: [
+                {
+                    messageId: "restricted",
+                    data: { name: "foo" },
+                    type: "Identifier"
+                }
+            ]
         },
         {
-            code: "const whiteList = 1",
-            options: ["/(black|white)list/i"],
-            errors: [{ message: "Identifier 'whiteList' is restricted." }]
-        },
+            code: "whiteList = blackList",
+            options: ["/(white|black)list/i"],
+            errors: [
+                {
+                    messageId: "restricted",
+                    data: { name: "whiteList" },
+                    type: "Identifier"
+                },
+                {
+                    messageId: "restricted",
+                    data: { name: "blackList" },
+                    type: "Identifier"
+                }
+            ]
+        }
     ]
 });
