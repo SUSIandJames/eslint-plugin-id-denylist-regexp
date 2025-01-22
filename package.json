@@ -1,6 +1,6 @@
 {
   "name": "@susiandjames/eslint-plugin-id-denylist-regexp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Drop-in replacement for ESLint's rule id-denylist with support for RegExp",
   "keywords": [
     "eslint",
