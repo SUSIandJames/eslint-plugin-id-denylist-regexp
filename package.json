@@ -15,6 +15,10 @@
   "contributors": [
     "Vladislav Bachvarov <vladislav.bachvarov@susiandjames.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SUSIandJames/eslint-plugin-id-denylist-regexp.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "node tests/rule.js"
