@@ -24,6 +24,6 @@
     "test": "node tests/rule.js"
   },
   "dependencies": {
-    "eslint": "^9.15.0"
+    "eslint": "^9.23.0"
   }
 }
